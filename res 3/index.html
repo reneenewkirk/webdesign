@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>We're making dino run 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 2;
+  image-rendering: pixelated;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {
+    font-family: 'fff';
+    src: url('res/fffforwa-webfont.woff2') format('woff2'),
+         url('res/fffforwa-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body{
+  font-family:'fff';
+}
+  div.slide{
+    min-height:100vh;
+    background-color:#FFFCE2;
+    background-image:url(res/dino.gif);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: bottom left;
+    position: relative;
+    padding-top:1px;
+  }
+  div.title{
+    display:grid;
+    grid-template-rows:1fr 1fr;
+    position: absolute;
+    top: 8vw;
+    left: 8vw;
+    right: 8vw;
+    bottom: 8vw;
+  }
+  div.title h1{
+    font-size: 1.6em;
+    text-transform: uppercase;
+    line-height: 2em;
+
+  }
+  div.title a{
+    display:block;
+    justify-self: left;
+    box-shadow: -6px 6px 0px 0px #000000;
+    align-self: end;
+    text-decoration: none;
+    color: #000000;
+    background-color: #FFFCE2;
+    border:0.4em solid #000000;
+    padding:1.3em;
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+  div.title a:hover{
+    box-shadow: -9px 9px 0px 0px #000000;
+    margin-bottom: 3px;
+  }
+  div.title a:active{
+    box-shadow: none;
+    margin-bottom: 0;
+    }
+
+
+    body{padding:0; margin:0;}
+
+    div.mainframe{max-width:100%; margin:0 auto;}
+
+    div.blue{background:/;}
+    div.pink{background-color:#ffc;
+    background-image:url(res/largescene.png);
+    background-repeat:no-repeat;
+    background-size:100%;
+    background-position:top center;
+    }
+    div.text{
+    margin-left: 4vw;
+    margin-right: 4vw;
+    min-height:100vh;
+    background-color:rgba(255,224,144,0.6);
+    padding: 3em;
+  }
+  div.text.info{
+    margin-top:110vh;
+  }
+  div.text2{
+  min-height:100vh;
+  background-color:rgba(255,224,144,0.6);
+  padding: 3em;
+
+  }
+    div.yellow{background:#/;
+      background-image:url(res/runbg.png);
+    }
+    div.purple{background:/;
+      background-image:url(res/green.png)
+    }
+    div.purple h1{
+      font-size: 1.6em;
+      text-transform: uppercase;
+      line-height: 2em;
+    }
+    a.button{
+    display:inline-block;
+    justify-self: left;
+    box-shadow: -6px 6px 0px 0px #000000;
+    align-self: end;
+    text-decoration: none;
+    color: #000000;
+    background-color: #FFFCE2;
+    border:0.4em solid #000000;
+    padding:1.3em;
+    text-transform: uppercase;
+    font-size: 0.9em;
+  }
+  a.button:hover{
+    box-shadow: -9px 9px 0px 0px #000000;
+    margin-top: 3px;
+  }
+    a.button:active{
+    box-shadow: none;
+    margin-top: 0;
+    }
+
+    div.hero{
+      width:100%;
+      height:70vh;
+      object-fit:cover;
+      object-position: center center;
+
+  }
+  div.grid{
+        display:grid;
+        grid-template-columns:1fr 1fr 1fr 1fr;
+        grid-gap:0.5px;
+        max-height:400vh
+      }
+      div.grid2{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      div.grid2 div.img{
+        width:100%;
+        height:100%;
+      }
+      div.grid2 div.img img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        object-position:center center;
+      }
+      div.example{
+
+        padding:5px 5px 5px 5px;
+}
+      div.cardholder{display:grid; grid-template-columns:repeat(auto-fit, minmax(150px, 1fr)); grid-gap:2vw;}
+     div.card{background-color:#ffffff; border:0.4em solid #000000; min-height:30vh; text-align:center;}
+     div.card div.img{display:block; height:max(9vw); width:max(12vw); margin:20px auto; background-repeat:no-repeat; background-position:center center; background-size:contain;}
+     div.card div.txt{padding:2em; color:#000000;
+     }
+    div.card a.button{
+      margin-top:1.5em;
+
+    }
+    img.map{
+      width:100%;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="mainframe">
+
+  <div class="slide blue">
+    <div class="title">
+      <h1>we're making <br>dino run 2</h1>
+      <a href="#">Fund Dino Run 2</a>
+    </div>
+  </div>
+
+  <div class="slide pink">
+    <div class="text info">
+      <p style="color:#FFFCE2;">It's the sequel to Pixeljam's original prehistoric platformer, <br>Dino Run, where you...</p><br>
+Customize your dino character with a huge assortment of hats, helmets, skin colors and patterns.
+<Br><Br>
+Speed across a dynamically-generated prehistoric terrain, 2D platformer-style and outrun a pyroclastic wall of doom.
+<Br><Br>
+Race your friends in multiplayer matches, or just hang out in the lobby and chat.
+<br><br>
+<div align="center"><img src="res/city.gif">
+<br><br><a href="#" class="button">See What's New</a><br></div>
+  </div>
+</div>
+
+
+
+  <div class="slide purple">
+    <div class="grid2">
+      <div class="img"><img src="res/trex.gif"></div>
+      <div class="text2">
+        <h1>VASTLY
+        <br>IMPROVED
+        <br>PHYSICS: </h1><br>
+The original had dead simple physics, and somehow no one has complained yet.
+The sequel will get a massive engine upgrade (Unity) and with that, a modern take on how everything interacts.
+<br>
+<br><a href="#" class="button">Fund Dino Run 2</a>
+      </div>
+    </div>
+  </div>
+
+<div class="slide yellow">
+  <div class="text">
+      <div class="cardholder">
+          <div class="card">
+
+            <div class="img" style="background-image:url(res/triceratops.gif)"></div>
+            <div class="txt">
+              <h3>HALF RAPTOR</h3><br>
+<p style="color:grey;">Pledge $5 or more</p><br>
+Access to early deliverables such as design docs, prototypes, alphas, betas, etc.
+<br><a href="#" class="button">Pledge Here</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img" style="background-image:url(res/stego.gif)"></div>
+            <div class="txt">
+              <h3>FULL STEGO</h3><br>
+<p style="color:grey;">Pledge $10 or more</p><br>
+Full game for Mac, Windows and Linux. More text here so its the same length as the others.
+<br><a href="#" class="button">Pledge Here</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="img" style="background-image:url(res/fly.gif)"></div>
+            <div class="txt">
+              <h3>GET PHYSICAL</h3><br>
+              <p style="color:grey;">Pledge $60 or more</p><br>
+All of the previous awards and a screen-printed Dino Run T-shirt.
+<br><a href="#" class="button">Pledge Here</a>
+            </div>
+          </div>
+
+        </div>
+     </div>
+  </div>
+
+<div class="slide purple">
+<div class="text">
+<div align="center"><img src="res/dinocharacters.png"><br>
+  <a href="#" class="button">Fund Dino Run 2</a><br>
+  <br>
+  <div class="grid">
+    <div class=""><img src="res/social-facebook.png"> facebook</div>
+    <div class=""><img src="res/social-tumblr.png"> tumblr</div>
+    <div class="example"><img src="res/social-twitter.png"> twitter</div>
+    <div class="example"><img src="res/social-email.gif"> email</div>
+  </div></div>
+
+</div></div>
+
+
+</div>
+</body>
+</html>
